@@ -1,0 +1,264 @@
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>ETT workshop</title>
+        
+        <meta charset="utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <meta name="description" content="ETT workshop website"/>
+                    <meta name="author" content="Pietro Liuzzo"/>
+            <link rel="stylesheet" type="text/css" href="template/css/bootstrap.min.css"></link>
+            <link rel="stylesheet" type="text/css" href="template/css/scrolling-nav.css"/>
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.12.0/vis.min.css" />
+            <script type="text/javascript" src="template/js/jquery.js"></script>
+            <script src="template/js/bootstrap.min.js"></script>
+            <script src="template/js/scrolling-nav.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.12.0/vis.min.js"></script>
+            <style type="text/css">
+    #mynetwork {
+      width: 100%;
+      height: 600px;
+      border: 1px solid lightgray;
+    }
+  </style>
+    </head>
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+        
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">ETT Workshop</a>
+                </div>
+                
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                        <li class="hidden">
+                            <a class="page-scroll" href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#about">About</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#examples">Examples</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#ontology">Ontology</a>
+                            
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#guidelines">guidelines</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+        
+        <!-- Intro Section -->
+        <section id="intro" class="intro-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Intro</h1>
+                        <p class="lead">This is a page to display contents and output of the workshop in Odense University 16-18 February 2017 for the project <a href="http://emotions.shca.ed.ac.uk/">Emotions Through Time: From Antiquity to Byzantium</a>.</p>
+                        <div class="container">
+                            <h2>Programm</h2>
+                            <h3>Giovedì 16 febbraio 2017</h3>
+                            
+                           <ul> <li>10.00-11.00 Presentazione di hypothes.is ai colleghi</li>
+                         <li>   11.30-12.00 Q/A session da parte dei colleghi</li>
+                            
+                            <li>Pausa pranzo</li>
+                            
+                           <li> 14.00-15.30 Esercizio pratico di annotazione
+                           </li> </ul>
+                            
+                            <h3>Venerdì 17 Febbraio 2017</h3>
+                            <ul><li>10.00-11.00 Aglae presenta il progetto ETT, i materiali che abbiamo in mano al momento e un'ipotesi di ontologia
+                           </li> <li>11.00-11.30 Feedback di Pietro sulla fattibilità, specialmente pensando all'app
+                           </li> <li>11.30-12.00 Pausa
+                            </li><li>12.00-13.00 Brainstorming con i colleghi sulle categorie proposte per l'ontologia
+                            </li>
+                            <li>13.00-14.30 Pausa pranzo
+                            </li>
+                            <li>14.30-16.15 Cominciamo a lavorare praticamente sui nostri testi
+                            </li></ul>
+                            
+                            
+                            <h3>Sabato 18 Febbraio 2017</h3>
+                            <p>Sabato mattina continuiamo il lavoro di annotazione</p>
+                        </div>
+                        <a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>About</h1>
+                        <p>This page displays:</p>
+                            <ul>
+                                <li>with Feedwind a RSS feed from Hypothes.is annotations</li>
+                                <li>a timeline showing the same data from a public google spreadsheet.</li>
+                                <li>two ways to exploit data from the Hypothes.is api for basic visualization, a selector and a graph</li>
+                                <li>simple guidelines to annotate</li>
+                                <li>a draft reference ontology to organize the annotation and reuse them meaningfully.</li>
+                            </ul> 
+                        <p>This should demonstrate how powerfull is the potential of using this very intuitive tool to annotate online data.</p>
+                        <p>The annotations can be downloaded and used to populate a database with existing tools as this <a href="http://jonudell.net/h/facet.html">http://jonudell.net/h/facet.html</a> although the open access annotations in hypothes.is are already much more reusable via api, rss, and other services they provide.</p>
+                        <p>These are simply examples of simple workflow results/visualizations of annotations on online data with Hypothesis.<a class="btn btn-default page-scroll" href="#examples">Go to the examples.</a></p>
+                        <p>The annotations should follow a meaningfull structure for display and analysis of the data produced.<a class="btn btn-default page-scroll" href="#ontology">Go to the ontology.</a></p>
+                      </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="examples" class="examples-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Examples</h1>
+                        <p class="lead">A simple feed of all annotation with the tag ETT.</p>
+                        
+                        <div class="container"> <!-- start feedwind code --> 
+                        <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="9791/"></script> 
+                        <!-- end feedwind code -->
+                       </div> <a class="btn btn-default page-scroll" href="#ontology">Click Me to Scroll Down!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="timeline" class="examples-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Timeline</h1>
+                        <p class="lead">This timeline from Knight Lab TimelineJS uses data entered in <a href="https://docs.google.com/spreadsheets/d/1NKzbo2nC3RybAVVNTpBQIOGZYJYZBs0TzUX5MIQIYpw/edit#gid=0">this public google spreadsheet.</a> The same visualization tool <a href="https://timeline.knightlab.com/docs/json-format.html">can also be fed dynamically generated data.</a></p>
+                        <div class="container"><iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1NKzbo2nC3RybAVVNTpBQIOGZYJYZBs0TzUX5MIQIYpw&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+                        </div>
+                        <a class="btn btn-default page-scroll" href="#ontology">Click Me to Scroll Down!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="filter" class="examples-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Filter annotation from api</h1>
+                        <p class="lead">Select a class from the menu below to see some live information from the hypothesis api</p>
+                    <form id="form">
+                        <select name="enter"  id="input">
+                            <option value="ETT">ETT</option>
+                            <option value="ETT:WrittenSource">ETT:WrittenSource</option>
+                            <option value="ETT:VisualSource">ETT:VisualSource</option>
+                            <option value="ETT:EmotionName">ETT:EmotionName</option>
+                            <option value="ETT:hasIntensity">ETT:hasIntensity</option>
+                            <option value="ETT:isRelatedTo">ETT:isRelatedTo</option>
+                            <option value="ETT:hasPlace">ETT:hasPlace</option>
+                            <option value="ETT:Strong">ETT:Strong</option>
+                            <option value="ETT:ManifestSymptoms">ETT:ManifestSymptoms</option>
+                            <option value="ETT:Divine">ETT:Divine</option>
+                        </select>
+                    </form>
+                </div>
+                    <divclass="card"><div class="col-md-3"><p>text selected </p></div><div class="col-md-3"><p>title of page</p></div><div class="col-md-3"><p>text of the annotation</p></div><div class="col-md-3"><p>url of annotation page</p></div></div>
+                <div id="JSON"></div>
+                <script type="application/javascript" xml:space="preserve" src="getJSONdata.js"></script>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+        
+        <section id="graph" class="examples-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Vis Graph of annotation from api</h1>
+                        <p class="lead">The annotations available through the api can be used to produce graphs, timelines, etc.</p>
+                        <div id="mynetwork"></div>
+                        <pre id="whereToPrint"></pre>
+                    <script type="application/javascript" xml:space="preserve" src="makegraph.js"></script>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+        
+        <section id="guidelines" class="guidelines-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Guidelines</h1>
+                      <div class="container">
+                          <p class="lead">
+                              You can annotate any online resource you want.
+                          </p>
+                          <p class="lead">To set you up and start annotate.</p>
+                          <ol>
+                              <li>Install <a href="https://hypothes.is/">hypothes.is</a></li>
+                              <li>Create an account on hypothes.is</li>
+                              <li>login and get familiar with hypothes.is sidebar</li>
+                              </ol>
+                          
+                          <p class="lead">While annotating, follow these simple guidelines</p>
+                          <ul>
+                              <li>Make sue you always mark your project annotation with the ETT tag. There is however no guarantee that somebody will not use this tag for something else, but the information can be otherways filtered to get the correct data.</li>
+                              <li>To annotate a text string, image, page with a class add a tag with the class name. This will mean that this selection is part of this class. <a href="https://hyp.is/2VhPnvLNEeaQ5MO8vVcctA/www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0133">EXAMPLE</a></li>
+                              <li>To annotate a text string, image, page with a property add a tag with the property name and enter as the text of the annotation the value to be related. This will mean that this selection is related by this property to whatever is in the text of the annotation. <a href="https://hyp.is/6JAijvLSEeawGMdKqCsYFQ/www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0133">EXAMPLE</a></li>
+                          </ul>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="ontology" class="ontology-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Ontology</h1>
+                        <h2>Main Terms</h2>
+                        <p class="lead">MEMENTO: The ontology is a reflection of the real world, and if no categorization exists in the real world, then the ontology should reflect that.</p>
+                        <p><a href="http://www.essepuntato.it/lode/https://raw.githubusercontent.com/PietroLiuzzo/ETT/master/ETT.owl">LODE documentation</a></p>
+                        <img width="100%" src="ontograph.png"></img>
+                        <a class="btn btn-default page-scroll" href="#intro">Click Me to return to the top!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- jQuery -->
+        <script src="template/js/jquery.js"></script>
+        
+        <!-- Bootstrap Core JavaScript -->
+        <script src="template/js/bootstrap.min.js"></script>
+        
+        <!-- Scrolling Nav JavaScript -->
+        <script src="template/js/jquery.easing.min.js"></script>
+        <script src="template/js/scrolling-nav.js"></script>
+        
+    </body>
+</html>
