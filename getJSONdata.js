@@ -26,7 +26,7 @@ console.log(data);
        if('selector' in ann.target["0"]){text += ann.target["0"].selector[3].exact} else {text += ann.target.source};
        var content = "";
        var contentdata = ann.text
-       if(contentdata.startsWith("http")){content += "<a href='"+contentdata +"'>link</a>"} else {content += contentddata};
+       if(contentdata.startsWith("http")){content += "<a href='"+contentdata +"'>link</a>"} else {content += contentdata};
        var url = "";
        var urldata = ann.uri
        if(urldata.startsWith("http")){url += "<a href='"+urldata +"'>link</a>"} else {url += urldata};
