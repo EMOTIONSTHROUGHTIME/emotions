@@ -341,6 +341,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Fear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Fear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotions"/>
+        <rdfs:seeAlso>http://purl.obolibrary.org/obo/MFOEM_000026</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Genres -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Genres">
