@@ -127,6 +127,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#hasTranslation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#hasTranslation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#hasType -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#hasType">
@@ -247,6 +255,15 @@
     
 
 
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#WrittenSources"/>
+    </rdf:Description>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -324,14 +341,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Furore -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Furore">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Ira"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Genres -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Genres">
@@ -386,14 +395,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Ira -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Ira">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotions"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Latin -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Latin">
@@ -422,46 +423,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Medium">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Intensity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion1 -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion1">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotions"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion2 -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion2">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotions"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion3 -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion3">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotions"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion4 -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion4">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotions"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion5 -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion5">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotions"/>
     </owl:Class>
     
 
@@ -510,14 +471,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#SignLanguage">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ActingOut"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Stizza -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Stizza">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Ira"/>
     </owl:Class>
     
 
@@ -586,49 +539,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Acoustic"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Bodily"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Epic"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Facial"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Greek"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#History"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Latin"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion1"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion2"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion3"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion4"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion5"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Poetry"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Political"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Private"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Ritual"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#SignLanguage"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Tragedy"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Acoustic"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Bodily"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Epic"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Facial"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Greek"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#History"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Latin"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion1"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion2"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion3"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion4"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotion5"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Poetry"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#SignLanguage"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Tragedy"/>
-        </owl:members>
-    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
