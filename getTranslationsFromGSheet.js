@@ -22,26 +22,3 @@ var textsAndTranslations =[]
                 $('#translationID').append('<div class="row"><div class="col-md-2">' + transl.link + '</div><div class="col-md-5">' + transl.source + '</div><div class="col-md-5">' + trans + '</div></div><hr/>')
             });
 });
-/*
- function associateTranslation(id) { 
- $.getJSON("https://spreadsheets.google.com/feeds/list/107VGGnAAWIQyxqH9sptBHYu9SsgKUTrmNHHQu04BiE8/od6/public/basic?alt=json", function (data) {
-            $.each(data.feed.entry, function (e, entry) {
-                var annotationid = id;
-                var translationid = entry.title.$t;
-                console.log('aid' + annotationid);
-                console.log('tid' + translationid);
-                // console.log(item.content.$t)
-                if (translationid.toString() == annotationid.toString()) {
-                    console.log('yes, is the same')
-                    return entry.content.$t;
-                  //  textTranslation.translation = entry.content.$t // adds the translation to the object
-                   
-                } else {
-                    'no translation'
-                };
-                // add the object to the array of text and translation array
-            });
-            //        console.log(textTranslation) textsAndTranslations.push(textTranslation);
-         //  textsAndTranslations.push(textTranslation);
-        });  
-        };*/
