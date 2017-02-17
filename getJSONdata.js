@@ -32,7 +32,7 @@ console.log(data);
        if(urldata.startsWith("http")){url += "<a href='"+urldata +"'>link</a>"} else {url += urldata};
        
        
-      items.push( "<div id='" + ann.id + "' class='card'><div class='col-md-3'><p>" + text +"</p></div><div class='col-md-3'><p>"  + ann.document.title +"</p></div><div class='col-md-3'><p>"  + content +"</p></div><div class='col-md-3'><p>" + ann.uri + "</p></div></div>" );
+      items.push( "<div class='row'><div id='" + ann.id + "' class='card'><div class='col-md-3'><p>" + text +"</p></div><div class='col-md-3'><p>"  + ann.document.title +"</p></div><div class='col-md-3'><p>"  + content +"</p></div><div class='col-md-3'><p>" + ann.uri + "</p></div></div></div>" );
 };
   
   $( "<div/>", {
