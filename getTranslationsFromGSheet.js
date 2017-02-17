@@ -17,7 +17,7 @@ var textsAndTranslations =[]
         console.log(textTranslation)
         $(textsAndTranslations).each(function (i, transl) {
                 var trans = transl.translation
-                $('#translationID').append('<div class="col-md-2">' + transl.link + '</div><div class="col-md-5">' + transl.source + '</div><div class="col-md-5">' + trans + '</div>')
+                $('#translationID').append('<div class="row"><div class="col-md-2">' + transl.link + '</div><div class="col-md-5">' + transl.source + '</div><div class="col-md-5">' + trans + '</div></div>')
             });
     });
 });
