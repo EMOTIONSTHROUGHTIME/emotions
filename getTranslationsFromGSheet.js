@@ -7,7 +7,7 @@ var textsAndTranslations =[]
         var textTranslation = {
         }
         
-        if('selector' in item.target["0"]){textTranslation.source = item.target["0"].selector[3].exact} else {textTranslation.source = item.target.source}; //this adds the text from the annotation
+        if('selector' in item.target["0"]){textTranslation.source = item.target["0"].selector[3].exact} else {textTranslation.source = item.target["0"].source}; //this adds the text from the annotation
         
          textTranslation.translation = item.text
 
