@@ -1,6 +1,6 @@
 
 
-var relationslist = ["ETT:hasDate", "ETT:isManifestationOf","ETT:isAttestationOf", "ETT:hasTranslation", "ETT:hasPlace", "ETT:isNameOf"]
+var relationslist = ["ETT:hasDate", "ETT:isManifestationOf","ETT:isAttestationOf", "ETT:hasTranslation", "ETT:hasPlace", "ETT:isNameOf", "ETT:hasIntensity", "ETT:hasActorType"]
 
 
 /*initialize data arrays*/
@@ -114,7 +114,7 @@ $.getJSON("https://hypothes.is/api/search?tag=ETT&limit=200", function (data) {/
     
     // takes each tag ones and creates a node
     for (var eachtag in tags) {
-        if(eachtag == "ETT:hasDate") {} 
+        if(relationslist.includes(eachtag)) {} 
         else {
         var onetag = new Object();
         onetag.id = eachtag
@@ -157,14 +157,32 @@ $.getJSON("https://hypothes.is/api/search?tag=ETT&limit=200", function (data) {/
     };
     console.log(edgesdata)
     var options = {
-        nodes: {
-            shape: 'dot',
-            size: 30,
-            font: {
-                size: 12
-            },
-            borderWidth: 2
+      nodes: {
+        shape: 'dot',
+        scaling: {
+          min: 10,
+          max: 30
+          
+        },
+        font: {
+          size: 12,
+          face: 'Tahoma'
         }
+      },
+      edges: {
+        width: 0.15,
+        color: {inherit: 'from'},
+        smooth: {
+          type: 'continuous'
+        }
+      },
+      physics: false,
+      interaction: {
+        tooltipDelay: 200,
+        hideEdgesOnDrag: true,
+          navigationButtons: true,
+          keyboard: true
+      }
     };
     var network = new vis.Network(container, data, options);
     
