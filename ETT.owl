@@ -424,7 +424,7 @@
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Greek -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Greek">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#language"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Language"/>
     </owl:Class>
     
 
@@ -499,10 +499,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Language -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Language">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#WrittenSources"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Latin -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Latin">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#language"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Language"/>
     </owl:Class>
     
 
@@ -686,14 +694,6 @@
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#WrittenSources -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#WrittenSources"/>
-    
-
-
-    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#language -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#language">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#WrittenSources"/>
-    </owl:Class>
     
 
 
