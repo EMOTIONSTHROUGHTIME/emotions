@@ -523,6 +523,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Philosophy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Philosophy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Genres"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Poetry -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Poetry">
@@ -665,6 +673,17 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Divine"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Hero"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Human"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Epic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Hagiography"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#History"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Philosophy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Poetry"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Tragedy"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
