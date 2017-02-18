@@ -204,7 +204,6 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#EmotionName"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Emotions"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ModalEmotions"/>
     </owl:ObjectProperty>
     
 
@@ -341,6 +340,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ExternalStandards -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ExternalStandards">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#NormativeSignificance"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#InternalStandards"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Facial -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Facial">
@@ -450,6 +458,14 @@
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Intensity -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Intensity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#InternalStandards -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#InternalStandards">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#NormativeSignificance"/>
+    </owl:Class>
     
 
 
