@@ -14,6 +14,7 @@
             <script type="text/javascript" src="template/js/jquery.js"></script>
             <script src="template/js/bootstrap.min.js"></script>
             <script src="template/js/scrolling-nav.js"></script>
+        <script src="jOWLBrowser.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.12.0/vis.min.js"></script>
             <style type="text/css">
@@ -227,8 +228,12 @@
                           
                           <p class="lead">While annotating, follow these simple guidelines</p>
                           <ul>
-                              <li>Annotate the page with a note to say that this is a written source (ETT:WrittenSource) and add in the text the perseus catalogue urn <a href="https://hyp.is/inTuUvUFEeanMLN7KoH_gQ">Example</a></li>
+                              <li>All Annotation must contain the ETT tag.</li>
+                              <li>All Annotation must contain a tag identifying the canonical id of source. tlg.02770.tlg0001 for a greek text or for images ettimage:{theidoftheimage}</li>
+                              <li>Annotate the page with a note to say that this is a written source (ETT:WrittenSource) and add in the text the perseus catalogue urn <a href="https://hypothes.is/a/inTuUvUFEeanMLN7KoH_gQ">Example</a></li>
                               <li>You can add a date in an annotation with a tat ETT:hasDate <a href="https://hyp.is/TYNwCvUEEeaSVrOAOIsy1w">Example</a></li>
+                              <li>You can assign the name of the emotion with ETT:isNameOf <a href="https://hyp.is/UM14zPUAEea2-g8iIOisAg">like this</a></li>
+                              <li>You can assign a text to an emotion with ETT:isManifestationOf like <a href="https://hyp.is/xu5UAPUJEeaEevu4dQD51w">like this</a> </li>
                               <li>Make sue you always mark your project annotation with the ETT tag. There is however no guarantee that somebody will not use this tag for something else, but the information can be otherways filtered to get the correct data.</li>
                               <li>To annotate a text string, image, page with a class add a tag with the class name. This will mean that this selection is part of this class. <a href="https://hyp.is/2VhPnvLNEeaQ5MO8vVcctA">EXAMPLE</a></li>
                               <li>To annotate a text string, image, page with a property add a tag with the property name and enter as the text of the annotation the value to be related. This will mean that this selection is related by this property to whatever is in the text of the annotation. <a href="https://hyp.is/6JAijvLSEeawGMdKqCsYFQ">EXAMPLE</a></li>

@@ -2,15 +2,12 @@
 // example below for one annotation
 $(document).on('ready', function () {
 /*
- this should decide the options based on existing tags in annotations
+show all
+get a list of main classes
+get a list of  subclassess if a class is selected
+get the annotations in that that class, if a super class is selected all the annotations included taking the values from the Ontology file.
 
-var selectValues = {}
-$.each(selectValues, function(key, value) {   
-     $('#input')
-         .append($("<option></option>")
-                    .attr("value",key)
-                    .text(value)); 
-});*/
+*/
 $('#input').on('change', function () {
 
 

@@ -1,3 +1,8 @@
+
+
+var relationslist = ["ETT:hasDate", "ETT:isManifestationOf","ETT:isAttestationOf", "ETT:hasTranslation", "ETT:hasPlace", "ETT:isNameOf"]
+
+
 /*initialize data arrays*/
 
 var nodesdata = new Array();
@@ -5,158 +10,164 @@ var edgesdata = new Array();
 
 /*call to hypothesis api*/
 $.getJSON("https://hypothes.is/api/search?tag=ETT", function (data) {
-    $.each(data.rows, function (i, item) {
     
-/* TODO    first take individual values of exact or not with a if selector. the node is the selected text at the selected page, the annotation id cannot really be reused
-or
-- each annotation is a node (as now), but also, and only once 
-- the exact selection is a node 
-and there is 
-- an edge "oa:hasAnnotation" between this node and each annotation
-
-use same technique as tags to make them unique (although they can be very long!!!)
-if ('selector' in item.target["0"]){
-        var selectedtext = new Object();
-        selectedtext.id = item.document.title[1] + item/target["0"].selector[3].exact
-        selectedtext.label =item/target["0"].selector[3].exact
-        selectedtext.group = "selection"
-        nodesdata.push(selectedtext);
-    };*/ 
+    var tags = {};  //    collect all tags in this variable to then create only one node for each
+    var contents = {    };  //    collect all contents in this variable to then create only one node for each
     
-    
-    // check if it is a relation annotation
-    var t = item.text
-      if(t.startsWith("ETT\:") && ('selector' in item.target["0"])){
-   
-       var selectedtext = new Object();
-        selectedtext.id = item.id
-        selectedtext.label = item.id + item.document.title[0]
-        selectedtext.group = "relation"
-        nodesdata.push(selectedtext);
+    $.each(data.rows, function (i, item) { // drill down to each item in the list
         
-          var relation = new Object();
-          relation.from = item.id
-        relation.to = item.tags[1]
-        relation.label = item.text
-        edgesdata.push(relation);
-       
-       
-}
- else if(t.startsWith("http") && ('selector' in item.target["0"])){
-   
-       var selectedtext = new Object();
-        selectedtext.id = item.id
-        selectedtext.label = item.document.title[0]
-        selectedtext.group = "relation"
-        nodesdata.push(selectedtext);
+        //store text in a variable for evaluation
+        var SourceText = ""; //save here the tag that identifies the source, as the url is not always usable.
         
-         var targettext = new Object();
-        targettext.id = item.id + t
-        targettext.label = t
-        targettext.group = "relation"
-        nodesdata.push(targettext);
+        var taglist = item.tags //save all the tags of this item in a list to check whether it contains something or not
         
-          var relation = new Object();
-          relation.from = item.id
-        relation.to = item.id + t
-        relation.label = item.tags[1]
-        edgesdata.push(relation);
        
-       
-}
-else {
-        // take the ids and title of each annotation and make it a node
-        var node = new Object();
-        node.id = item.id
-        node.label =item.document.title[0]
-        node.group = "individual"
-        nodesdata.push(node);
-      
-      }
+        var t = item.text //store the text of the annotation in this variable
         
-        // take each annotation and make an edge to a tag
-      
-        $.each(item.tags, function (t, thistag) {
-          var edge = new Object();
-          edge.from = item.id
-        edge.to = thistag
-        edge.label = 'rdf:type'
-        edgesdata.push(edge);
+        // the following loop stores the identifier of the source in the SourceText varible
+        $.each(item.tags, function (ta, TAG) {  
+            if (TAG.startsWith("tlg")) {
+                SourceText = TAG
+            } else if (TAG.startsWith("ettimage")) {
+                SourceText = TAG
+            } else {
+            };
         });
         
-         // take each annotation and make an edge to a uri
-        /*$.each(item.uri, function (t, thisuri) {
-          var uri = new Object();
-          uri.from = item.id
-        uri.to = thisuri
-        edgesdata.push(uri);
-        });*/
+        // this loops through each relation and creates an edge
+        $.each(item.tags, function (ta, TAG) {
+        
+           if (TAG == "ETT") {console.log(item.id + item.text + 'skipping ETT')} // no edge for the general tag
+           else  if (relationslist.includes(TAG)) { // if the tag is in the list of relations, use the tag as label and the text of the annotation as target
+                var namedrelation = new Object();
+                namedrelation.from = SourceText
+                namedrelation.to = t
+                namedrelation.label = TAG
+                edgesdata.push(namedrelation);
+                console.log(namedrelation)
+                console.log(item.id + item.text + 'adding relation')
+            } else if(TAG.startsWith('tlg')){console.log(item.id + item.text + 'skipping source reference')} 
+            else if(TAG.startsWith('ettimage')){console.log(item.id + item.text + 'skipping source reference')} 
+            else { // otherways this tag is likely to be a class, then create an edge between the tag and the source
+                var relation = new Object();
+                relation.from = TAG
+                relation.to = SourceText
+                relation.label = "rdf:type"
+                console.log(relation)
+                edgesdata.push(relation);
+                
+                console.log(item.id + item.text + 'adding link to class')
+            }
+        });
+        
+        // check if it is a relation annotation
+        
+        if (t.startsWith("ETT\:")) {
+            
+            
+            tags[item.text] = true;
+            
+        } 
+        else if (t.startsWith("http") && ('selector' in item.target[ "0"])) {
+            
+        contents[t] = true;
+            
+            var relation = new Object();
+            relation.from = SourceText
+            relation.to = t
+            edgesdata.push(relation);
+        } 
+        else 
+        if (taglist.includes("ETT:hasDate", "ETT:hasTranslation", "ETT:hasPlace")) {
+            contents[t] = true;
+        } 
+        else {
+        }
+        
+        // take each annotation and make an edge to a tag
+        
+        $.each(item.tags, function (t, thistag) {
+         if ((thistag.startsWith("t")) || (thistag.startsWith("e")) || relationslist.includes(thistag)) {} else {
+            var edge = new Object();
+            edge.from = SourceText
+            edge.to = thistag
+            edge.label = 'rdf:type'
+            edgesdata.push(edge);
+            }
+        });
     });
     
     // take each tag and make it into a node with id and label
     
     
     
-    var tags = {
-    };
+    
     $.each(data.rows, function (i, item) {
         $.each(item.tags, function (t, thistag) {
-            tags[thistag] = true;
+            if (thistag == 'ETT') {
+            } else {
+                tags[thistag] = true;
+            }
         });
-        
     });
     
+    
+    // takes each tag ones and creates a node
     for (var eachtag in tags) {
+        if(eachtag == "ETT:hasDate") {} 
+        else {
         var onetag = new Object();
         onetag.id = eachtag
         onetag.label = eachtag
-        onetag.group = "class"
+        if (eachtag.startsWith("tlg")) {
+            onetag.group = "writtensource"
+        } else if (eachtag.startsWith("ettimage")) {
+            onetag.group = "visualsource"
+        } else {
+            onetag.group = "class"
+        }
         nodesdata.push(onetag);
+        }
     }
-
-  
-        // take each source and make a node
-        /*var sources = new Object();
-        $.each(data.rows, function (i, item) {
-        $.each(item.uri, function (t, thisuri) {
-            sources[thisuri] = true;
-        });
+    
+    // takes each content ones and creates a node
+    for (var C in contents) {
         
-    });  
-        for (var eachuri in sources) {
-        var oneuri = new Object();
-        oneuri.id = eachuri
-        oneuri.label = eachuri
-        oneuri.group = "uri"
-        nodesdata.push(oneuri);
-    }*/
-        
-
-// create an array with nodes
-var nodes = new vis.DataSet(nodesdata);
-
-// create an array with edges
-var edges = new vis.DataSet(edgesdata);
-
-//create a network
-var container = document.getElementById('mynetwork');
-var data = {
-    nodes: nodes,
-    edges: edges
-};
-console.log(edgesdata)
-var options = {
-nodes: {
+        var contenttext = new Object();
+        contenttext.id = C
+        contenttext.label = C
+        contenttext.group = "relation"
+        console.log(contenttext)
+        nodesdata.push(contenttext);
+    }
+    
+    
+    
+    // create an array with nodes
+    var nodes = new vis.DataSet(nodesdata);
+    
+    // create an array with edges
+    var edges = new vis.DataSet(edgesdata);
+    
+    //create a network
+    var container = document.getElementById('mynetwork');
+    var data = {
+        nodes: nodes,
+        edges: edges
+    };
+    console.log(edgesdata)
+    var options = {
+        nodes: {
             shape: 'dot',
             size: 30,
             font: {
                 size: 12
             },
             borderWidth: 2
-            }
-};
-var network = new vis.Network(container, data, options);
-
-//the following prints the data behind the graph to a pre element
-//document.getElementById('whereToPrint').innerHTML = JSON.stringify(nodesdata, null, 4);
+        }
+    };
+    var network = new vis.Network(container, data, options);
+    
+    //the following prints the data behind the graph to a pre element
+    //document.getElementById('whereToPrint').innerHTML = JSON.stringify(nodesdata, null, 4);
 });

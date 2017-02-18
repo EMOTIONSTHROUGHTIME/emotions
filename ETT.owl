@@ -375,6 +375,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Hagiography -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Hagiography">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Genres"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Hero -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Hero">
@@ -493,6 +501,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#RaisingHands -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#RaisingHands">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Gesture"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Ritual -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Ritual">
@@ -504,6 +520,14 @@
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Settings -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Settings"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Shivering -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Shivering">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ManifestSymptoms"/>
+    </owl:Class>
     
 
 
