@@ -1,6 +1,6 @@
 
 
-$.getJSON("https://hypothes.is/api/search?tag=ETT:hasTranslation", function (data) {
+$.getJSON("https://hypothes.is/api/search?tag=ETT:hasTranslation&limit=200", function (data) {
     var textsAndTranslations =[]
     $.each(data.rows, function (i, item) {
         console.log(item);

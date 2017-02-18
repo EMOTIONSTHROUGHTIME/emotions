@@ -9,29 +9,29 @@ var nodesdata = new Array();
 var edgesdata = new Array();
 
 /*call to hypothesis api*/
-$.getJSON("https://hypothes.is/api/search?tag=ETT", function (data) {
+$.getJSON("https://hypothes.is/api/search?tag=ETT&limit=200", function (data) {// ON MORE THAN 200 ANNOTATIONS this needs to be changed!!!
     
     var tags = {};  //    collect all tags in this variable to then create only one node for each
     var contents = {    };  //    collect all contents in this variable to then create only one node for each
-    
+    console.log(data.rows.length)
     $.each(data.rows, function (i, item) { // drill down to each item in the list
         
         //store text in a variable for evaluation
         var SourceText = ""; //save here the tag that identifies the source, as the url is not always usable.
         
         var taglist = item.tags //save all the tags of this item in a list to check whether it contains something or not
-        
+        console.log(taglist)
        
         var t = item.text //store the text of the annotation in this variable
         
         // the following loop stores the identifier of the source in the SourceText varible
         $.each(item.tags, function (ta, TAG) {  
-            if (TAG.startsWith("tlg")) {
+         if (TAG.startsWith("tlg")) {
                 SourceText = TAG
             } else if (TAG.startsWith("ettimage")) {
                 SourceText = TAG
             } else {
-            };
+            };   
         });
         
         // this loops through each relation and creates an edge
@@ -44,8 +44,8 @@ $.getJSON("https://hypothes.is/api/search?tag=ETT", function (data) {
                 namedrelation.to = t
                 namedrelation.label = TAG
                 edgesdata.push(namedrelation);
-                console.log(namedrelation)
-                console.log(item.id + item.text + 'adding relation')
+              console.log(namedrelation)
+              console.log(item.id + item.text + 'adding relation')
             } else if(TAG.startsWith('tlg')){console.log(item.id + item.text + 'skipping source reference')} 
             else if(TAG.startsWith('ettimage')){console.log(item.id + item.text + 'skipping source reference')} 
             else { // otherways this tag is likely to be a class, then create an edge between the tag and the source
@@ -56,7 +56,7 @@ $.getJSON("https://hypothes.is/api/search?tag=ETT", function (data) {
                 console.log(relation)
                 edgesdata.push(relation);
                 
-                console.log(item.id + item.text + 'adding link to class')
+             //   console.log(item.id + item.text + 'adding link to class')
             }
         });
         

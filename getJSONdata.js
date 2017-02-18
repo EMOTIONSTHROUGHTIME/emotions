@@ -13,7 +13,7 @@ $('#input').on('change', function () {
 
 $('#JSON').empty();
  var input = this.value
-var url = "https://hypothes.is/api/search?tag=" + input
+var url = "https://hypothes.is/api/search?tag=" + input + "&limit=200"
 $.getJSON( url, function( data ) {
 console.log(data);
   var items = [];
