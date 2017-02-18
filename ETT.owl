@@ -280,6 +280,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Adjustment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Adjustment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Coping"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Baptism -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Baptism">
@@ -301,6 +309,20 @@
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#BreastBeating">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Gesture"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Control -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Control">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Coping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Coping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Coping"/>
     
 
 
@@ -559,6 +581,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Posture">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Bodily"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Power -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Power">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Coping"/>
     </owl:Class>
     
 
