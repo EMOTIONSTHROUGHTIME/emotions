@@ -281,6 +281,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Baptism -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Baptism">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Ritual"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Bodily -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Bodily">
@@ -313,6 +321,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Epic">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Genres"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Exorcism -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Exorcism">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Ritual"/>
     </owl:Class>
     
 
@@ -379,6 +395,22 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Hagiography">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Genres"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#HeartbeatFaster -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#HeartbeatFaster">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#HiddenSymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#HeartbeatSlower -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#HeartbeatSlower">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#HiddenSymptoms"/>
     </owl:Class>
     
 
@@ -541,6 +573,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Strong">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Intensity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Sweating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Sweating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#ManifestSymptoms"/>
     </owl:Class>
     
 
