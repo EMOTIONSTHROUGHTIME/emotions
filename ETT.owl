@@ -469,6 +469,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#NormativeSignificance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#NormativeSignificance"/>
+    
+
+
     <!-- http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Poetry -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pietro/ontologies/2017/1/ETT#Poetry">
